@@ -45,9 +45,9 @@ CLUSTER_NAMES = {
 def load_assets():
     try:
         kmeans = joblib.load('artifacts/kmeans_model.pkl')
-        scaler = joblib.load('artifacts/scaler_model.pkl')
+        scaler = joblib.load('artifacts/scaler_clustering.pkl')
         pca = joblib.load('artifacts/pca_model.pkl')
-        reg_pipeline = joblib.load('artifacts/regression_pipeline.pkl')
+        reg_pipeline = joblib.load('artifacts/xgboost_model.pkl')
         df = pd.read_csv('data/skincare_segmented.csv')
         return kmeans, scaler, pca, reg_pipeline, df
     except Exception as e:
